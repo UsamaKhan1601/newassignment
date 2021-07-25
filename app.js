@@ -1,4 +1,4 @@
-
+//  3rd Parts
 
 
 function Person(first, last, age, course) {
@@ -19,7 +19,7 @@ function Person(first, last, age, course) {
   console.log(userData())
 
 
-
+// 1st Part
 
 var finalAmount = 0;
 var itemsArray = [
@@ -36,6 +36,7 @@ for (var i=0; i < itemsArray.length; i++) {
 
 console.log("Total Amount is" +  " " + finalAmount);
 
+// 2nd part
 
 function Person(name, email, password, gender, age, city, country) {
     this.name = name;
@@ -53,4 +54,25 @@ console.log(Person.hasOwnProperty("email"))
 console.log(Person.hasOwnProperty("age"))
 console.log(Person.hasOwnProperty("country"))
 
+// 4th Part
+
+function user(name, gender, profession) {
+  this.name = name;
+  this.gender = gender;
+  this.profession= profession;
+}
+var arr = []
+function userData(){
+var user1 = new user("Usama", "Male", "freelancer");
+var user2 = new user("Talha", "Male", "Freelancer");
+var user3 = new user("Aisha", "Female", "Businessman");
+var user4 = new user("Shahbaz", "Male", "Salesman");
+
+
+arr.push(userData)
+return arr;
+// console.log(arr)
+}
+
+console.log(userData())
 
