@@ -56,23 +56,66 @@ console.log(Person.hasOwnProperty("country"))
 
 // 4th Part
 
-function user(name, gender, profession) {
-  this.name = name;
-  this.gender = gender;
-  this.profession= profession;
+let citizensData = [];
+//getting Data From User
+let males = 0;
+let females = 0;
+
+const adddingtoArray = () => {
+  let userName = document.querySelector(".name").value;
+  let userAge = document.querySelector(".age").value;
+  let userAdd = document.querySelector(".add").value;
+  let male = document.querySelector(".male");
+  let female = document.querySelector(".female");
+  let gender;
+  if (male.checked) {
+    gender = "male";
+    males++;
+  } else if (female.checked) {
+    gender = "female";
+    females++;
+  }
+  let educationDiv = document.querySelector(".education");
+  let education = educationDiv.getElementsByTagName("input");
+  let educationArr = [];
+  for (var i = 0; i < education.length; i++) {
+    if (education[i].checked) {
+      educationArr.push(education[i].value)
+    }
+  }
+  let professionDiv = document.querySelector(".profession");
+  let profession = professionDiv.getElementsByTagName("input")
+  let professionArr = [];
+  for (var i = 0; i < profession.length; i++) {
+    if (profession[i].checked) {
+      professionArr.push(profession[i].value)
+    }
+  }
+  let dataToGet = {
+    "name": userName,
+    "userAge": userAge,
+    "userAdd": userAdd,
+    "userGender": gender,
+    "education": educationArr,
+    "profession": professionArr
+  }
+  citizensData.push(dataToGet)
+  console.log(citizensData)
 }
-var arr = []
-function userData(){
-var user1 = new user("Usama", "Male", "freelancer");
-var user2 = new user("Talha", "Male", "Freelancer");
-var user3 = new user("Aisha", "Female", "Businessman");
-var user4 = new user("Shahbaz", "Male", "Salesman");
+const facts = () =>{
+let femaleInTown = document.querySelector(".femaleInTown");
+femaleInTown.innerHTML =`Total females in town are ${females}`;
+let maleInTown =document.querySelector(".maleInTown");
+maleInTown.innerHTML =`Total males in town are ${males}`
 
-
-arr.push(userData)
-return arr;
-// console.log(arr)
+let totalPopulation = document.querySelector(".totalPopulation");
+totalPopulation.innerHTML =`Total Population of town ${citizensData.length}`
 }
 
-console.log(userData())
+
+let btnOfAction = document.querySelector(".btn")
+btnOfAction.addEventListener("click", function () {
+  adddingtoArray();
+  facts();
+})
 

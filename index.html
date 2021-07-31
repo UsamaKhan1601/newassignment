@@ -6,23 +6,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <div>
-        <p>Select your Gender
-            <br />
-            <input type="radio" name="Gender" value="Male">Male
-            <input type="radio" name="Gender" value="Female">Female
-        </p>
-    </div>
-    <div>
-        <p>Select Your Profession</p>
-        <select name="profession">
-            <option value="Freelancer">Freelancer</option>
-            <option value="Businessman">Businessman</option>
-            <option value="Salesman">Salesman</option>
-
-        </select>
-</div>
-</body>
+<style>
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    label,
+    div,
+    .btn {
+      margin: 10px;
+    }
+  
+    .btn {
+      width: 150px;
+    }
+  </style>
+  
+    <body>
+      <!-- Assignment No 4 DOM -->
+      <form action="">
+        <label class="nameLabel">Name : <input type="text" name="name"
+            class="name" /></label>
+        <label class="addLabel">Address : <textarea name="address" id="" cols="30"
+            rows="10"
+            class="add">Enter our address here</textarea>
+        </label>
+        <div class="gender">Gender : <label class="maleLabel">Male<input
+              type="radio" value="male" name="gender"
+              class="male">
+          </label><label class="femaleLabel">Female<input type="radio"
+              value="female" name="gender" class="female"></label>
+        </div>
+        <label class="ageLabel"> Age : <input type="number" name="age"
+            class="age"></label>
+        <div class="education">
+          Education :
+          <label class="matricLabel">Matric : <input type="checkbox"
+              value="matric" name="education" class="matric"></label>
+          <label class="interLabel">Intermediate : <input type="checkbox"
+              value="inter" name="education"
+              class="inter"></label>
+          <label class="graduateLabel">Graduate : <input type="checkbox"
+              value="graduate" name="education"
+              class="graduate"></label>
+          <label class="mastersLabel">Masters : <input type="checkbox"
+              value="masters" name="education"
+              class="masters"></label>
+          <label class="otherLabelEducation"> Others : <input type="checkbox"
+              name="education" class="othersEducation" value="others"></label>
+        </div>
+        <div class="profession">
+          Professions:
+          <label class="engineerLable">Engineer : <input type="checkbox"
+              value="Engineer" name="professions"
+              class="engineer"></label>
+          <label class="ItLabel">IT Person : <input type="checkbox" value="It"
+              name="profession" class="It"></label>
+          <label class="teacherLabel">Teacher : <input type="checkbox"
+              value="teacher" name="profession"
+              class="teacher"></label>
+          <label class="SaleLabel">Sales Person : <input type="checkbox"
+              value="sales" name="profession"
+              class="sales"></label>
+          <label class="othersLabelProfession"> Others : <input type="checkbox"
+              name="profession" class="otherProfession" value="others"></label>
+        </div>
+        <input type="button" value="click Me" class="btn">
+      </form>
+      <div class="facts">
+        <p class="femaleInTown"></p>
+        <p class="maleInTown"></p>
+        <p class="totalPopulation"></p>
+      </div>
+    </body>
 <script src="./app.js"></script>
 </html>
